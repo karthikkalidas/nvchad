@@ -1,4 +1,5 @@
 local M = {}
+local opt = vim.opt
 
 M.dap = {
   plugin = true,
@@ -35,5 +36,8 @@ M.dap_go = {
       }
     }
   }
+
+opt.relativenumber = true
+opt.number = true
 
 return M
