@@ -4,6 +4,9 @@ local plugins = {
     opts = {
       ensure_installed = {
         "black",
+        "clangd",
+        "clang-format",
+        "codelldb",
         "debugpy",
         "gopls",
         "pyright",
@@ -13,8 +16,19 @@ local plugins = {
     },
   },
   {
+    "jay-babu/mason-nvim-dap.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    opt = {
+      handlers = {}
+    },
+  },
+  {
     "mfussenegger/nvim-dap",
-    init = function()
+    config = function(_, _)
       require("core.utils").load_mappings("dap")
     end
   },
@@ -67,7 +81,8 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = {"go", "python"},
+    event = "VeryLazy",
+    ft = {"go", "python", "cpp"},
     opts = function()
       return require "custom.configs.null-ls"
     end,
