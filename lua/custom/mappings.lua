@@ -52,6 +52,12 @@ M.dap_python = {
   }
 }
 
+M.miscellaneous = {
+  n = {
+    ["<leader>gg"] = { "<cmd> LazyGit <CR>", "Open LazyGit" },
+  }
+}
+
 opt.relativenumber = true
 opt.number = true
 
