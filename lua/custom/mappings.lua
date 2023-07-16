@@ -20,22 +20,33 @@ M.dap = {
 }
 
 M.dap_go = {
-    plugin = true,
-    n = {
-      ["<leader>dgt"] = {
-        function()
-          require('dap-go').debug_test()
-        end,
-        "Debug go test"
-      },
-      ["<leader>dgl"] = {
-        function()
-          require('dap-go').debug_last()
-        end,
-        "Debug last go test"
-      }
+  plugin = true,
+  n = {
+    ["<leader>dgt"] = {
+      function()
+        require('dap-go').debug_test()
+      end,
+      "Debug go test"
+    },
+    ["<leader>dgl"] = {
+      function()
+        require('dap-go').debug_last()
+      end,
+      "Debug last go test"
     }
   }
+}
+
+M.dap_python = {
+  plugin = true,
+  n = {
+    ["<leader>dpr"] = {
+      function()
+        require('dap-python').test_method()
+      end,
+    }
+  }
+}
 
 opt.relativenumber = true
 opt.number = true
